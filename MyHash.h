@@ -35,11 +35,17 @@ public:
             nonce++;
         }
     }
+
     size_t get(){
         return str_hash;
     }
+
     void printBlock(){
         cout<<massage<< " + ("<<nonce<<") + "<< lastHash << " ----> "<<str_hash<<endl;
+    }
+
+    static void display(MyHash myHash){
+        myHash.printBlock();
     }
 };
 

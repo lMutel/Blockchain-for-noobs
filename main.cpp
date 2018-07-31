@@ -18,12 +18,6 @@ using namespace std;
 
 
 
-
-
-void display(MyHash myHash){
-    myHash.printBlock();
-}
-
 int main() {
     vector<MyHash> newChain;
 
@@ -44,7 +38,8 @@ int main() {
         }
 
     }
-    for_each(newChain.begin(),newChain.end(),display);
+
+    for_each(newChain.begin(), newChain.end(), MyHash::display);
 
 
     return 0;
