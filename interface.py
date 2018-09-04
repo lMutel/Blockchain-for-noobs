@@ -1,8 +1,6 @@
 import MyHash
-
-
+import sys
 def interface():
-
     lastHash = "0000"
     print("Type exit() to quit")
     print("Please, put new note here: ")
@@ -21,4 +19,7 @@ def interface():
 
 
     for block in newChain:
-        print(block)
+        chain = open("chain", 'a')
+        chain.write(block.info())
+        chain.close()
+
