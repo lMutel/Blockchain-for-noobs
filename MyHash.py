@@ -15,16 +15,16 @@ class MyHash:
             self.__massage = s
             self.__lastHash = last
             self.__str_hash = str(hashlib.sha256(self.__massage.encode() + str(on).encode() + self.__lastHash.encode()).hexdigest())
-            if self.__str_hash[-1] == '0':
+            if self.__str_hash[-1] == "0" and self.__str_hash[-2] == "0":
                 self.nonce = on
                 break
             else:
                 on += 1
-            print(self.__str_hash)
+
 
 
     def info(self):
-        return ("{} ({}) {} -----> {}".format(self.__massage,self.nonce, self.__lastHash, self.__str_hash)+ '\n')
+        return "{} ({}) {} -----> {}".format(self.__massage, self.nonce, self.__lastHash, self.__str_hash) + '\n'
 
     def geter(self):
         return self.__str_hash
